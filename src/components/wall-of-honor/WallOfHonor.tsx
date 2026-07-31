@@ -6,7 +6,7 @@ import Container from "../ui/Container";
 
 export default function WallOfHonor() {
   return (
-    <section className="py-16 md:py-20 lg:py-24">
+    <section id="results" className="py-16 md:py-20 lg:py-24">
       <Container>
         <h2 className="mb-10 text-center text-3xl font-bold text-[#1F2937] sm:text-4xl lg:mb-16 lg:text-5xl">
           The Radhey Wall of Honor

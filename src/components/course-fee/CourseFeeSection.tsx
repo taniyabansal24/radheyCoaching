@@ -6,7 +6,7 @@ import { courseFeeData } from "./data";
 
 export default function CourseFeeSection() {
   return (
-    <section className="bg-white">
+    <section id="courses" className="bg-white">
       {/* ================= HERO ================= */}
 
       <div className="bg-[#9F4396] py-20 text-center text-white">

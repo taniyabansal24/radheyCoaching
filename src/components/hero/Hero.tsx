@@ -5,7 +5,7 @@ import Container from "../ui/Container";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#FBF8FC]">
+    <section id="home" className="relative overflow-hidden bg-[#FBF8FC]">
       <Container>
         {/* Background Glow */}
         <div className="absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[#A53BA5]/5 blur-[120px]" />

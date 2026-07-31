@@ -1,23 +1,65 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "../ui/Container";
 import ContactDialog from "../Contact/ContactDialog";
+import logo from "/images/tanishqSharma.png";
 
 const navItems = [
-  { label: "Home", href: "#" },
-  { label: "Courses", href: "#" },
-  { label: "Results", href: "#" },
-  { label: "Faculty", href: "#" },
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "#home" },
+  { label: "Courses", href: "#courses" },
+  { label: "Results", href: "#results" },
+  { label: "Faculty", href: "#faculty" },
+  { label: "About", href: "#about" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    const ids = ["home", "courses", "results", "faculty", "about"];
+    const elements = ids.map((id) => document.getElementById(id));
+
+    elements.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -26,14 +68,16 @@ export default function Navbar() {
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center">
-                {/* Replace with your logo image later */}
-                <span className="text-4xl font-black leading-none">
-                  <span className="text-[#A53BA5]">R</span>
-                  <span className="text-black">C</span>
-                </span>
+              <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Radhey Coaching Logo"
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-contain"
+                  priority
+                />
               </div>
-
               <span className="text-[18px] font-semibold text-[#A53BA5] md:text-[20px]">
                 Radhey Coaching
               </span>
@@ -41,23 +85,26 @@ export default function Navbar() {
 
             {/* Desktop Nav */}
             <nav className="hidden items-center gap-10 lg:flex">
-              {navItems.map((item, index) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`relative text-[14px] font-bold transition-colors ${
-                    index === 0
-                      ? "text-[#A53BA5]"
-                      : "text-gray-600 hover:text-[#A53BA5]"
-                  }`}
-                >
-                  {item.label}
+              {navItems.map((item) => {
+                const isActive = item.href === `#${activeSection}`;
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`relative text-[14px] font-bold transition-colors ${
+                      isActive
+                        ? "text-[#A53BA5]"
+                        : "text-gray-600 hover:text-[#A53BA5]"
+                    }`}
+                  >
+                    {item.label}
 
-                  {index === 0 && (
-                    <span className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-[#A53BA5]" />
-                  )}
-                </Link>
-              ))}
+                    {isActive && (
+                      <span className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-[#A53BA5]" />
+                    )}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Desktop Button */}
@@ -86,22 +133,31 @@ export default function Navbar() {
             }`}
           >
             <div className="space-y-1 px-5 py-5">
-              {navItems.map((item, index) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`block rounded-lg px-4 py-3 text-[15px] font-medium transition ${
-                    index === 0
-                      ? "bg-[#F8ECF8] text-[#A53BA5]"
-                      : "text-gray-700 hover:bg-[#F8ECF8] hover:text-[#A53BA5]"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = item.href === `#${activeSection}`;
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-lg px-4 py-3 text-[15px] font-medium transition ${
+                      isActive
+                        ? "bg-[#F8ECF8] text-[#A53BA5]"
+                        : "text-gray-700 hover:bg-[#F8ECF8] hover:text-[#A53BA5]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
 
-              <button className="mt-4 w-full rounded-xl bg-[#A53BA5] py-3 text-sm font-medium text-white shadow-lg transition hover:bg-[#922C92]">
+              <button
+                onClick={() => {
+                  setIsContactOpen(true);
+                  setOpen(false);
+                }}
+                className="mt-4 w-full rounded-xl bg-[#A53BA5] py-3 text-sm font-medium text-white shadow-lg transition hover:bg-[#922C92]"
+              >
                 Enroll Now
               </button>
             </div>

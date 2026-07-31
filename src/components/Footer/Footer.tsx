@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Globe,
   MapPin,
@@ -22,12 +23,16 @@ export default function Footer() {
               href="/"
               className="inline-flex items-center gap-3"
             >
-              <div className="flex h-12 w-12 items-center justify-center">
-                <span className="text-4xl font-black leading-none">
-                  <span className="text-[#A53BA5]">R</span>
-                  <span className="text-black">C</span>
-                </span>
-              </div>
+               <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
+                              <Image
+                                src="/images/logo.png"
+                                alt="Radhey Coaching Logo"
+                                width={48}
+                                height={48}
+                                className="h-full w-full object-contain"
+                                priority
+                              />
+                            </div>
 
               <span className="text-lg font-semibold text-[#A53BA5] sm:text-xl">
                 Radhey Coaching

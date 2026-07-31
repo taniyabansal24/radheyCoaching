@@ -79,7 +79,7 @@ const faculty = [
 
 export default function FacultyCarousel() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section id="faculty" className="bg-white py-16 lg:py-24">
       <Container>
         {/* Heading */}
 
