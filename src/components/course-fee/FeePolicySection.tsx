@@ -41,7 +41,7 @@ export default function FeePolicySection() {
                 </span>
               </div>
 
-              <h2 className="mt-8 text-[30px] font-semibold text-[#273147]">
+              <h2 className="mt-8 text-2xl font-semibold text-[#273147] sm:text-[30px]">
                 Fee Composition & Policy
               </h2>
 

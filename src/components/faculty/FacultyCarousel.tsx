@@ -133,18 +133,18 @@ export default function FacultyCarousel() {
                     <div className="flex h-full flex-col gap-5 sm:flex-row">
                       {/* Image */}
 
-                      <div className="relative h-[230px] w-full overflow-hidden rounded-2xl border-[3px] border-[#A13F99] sm:h-auto sm:w-[170px] md:w-[180px] lg:w-[190px] xl:w-[200px] shrink-0">
+                      <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-2xl border-[3px] border-[#A13F99] sm:w-[170px] md:w-[180px] lg:w-[190px] xl:w-[200px]">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
-                          className="object-cover"
+                          className="object-contain object-bottom sm:object-cover sm:object-bottom scale-[1.03]"
                         />
                       </div>
 
                       {/* Content */}
 
-                      <div className="flex flex-1 flex-col justify-center">
+                      <div className="flex flex-1 flex-col justify-center md:mt-6">
                         <h3 className="text-xl font-bold uppercase leading-tight text-[#A13F99] lg:text-2xl">
                           {item.name}
                         </h3>

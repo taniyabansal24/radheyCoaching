@@ -12,7 +12,7 @@ export default function CourseFeeSection() {
       <div className="bg-[#9F4396] py-20 text-center text-white">
         <Container>
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-5xl font-bold">Our Courses</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">Our Courses</h2>
 
             <p className="mt-6 text-[16px] text-white/90">
               Choose the perfect course for your Jee Main / Advanced, NEET and
@@ -32,7 +32,7 @@ export default function CourseFeeSection() {
               Invest In Your Future
             </p>
 
-            <h2 className="mt-5 text-5xl font-bold text-[#273147]">
+            <h2 className="mt-5 text-3xl font-bold text-[#273147] sm:text-4xl md:text-5xl">
               Course Fee Structure
             </h2>
 

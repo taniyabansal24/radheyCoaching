@@ -8,7 +8,7 @@ export default function PedagogySection() {
       <Container>
         {/* Heading */}
         <div className="mx-auto text-center">
-          <h2 className="text-5xl font-bold text-[#1F2937]">
+          <h2 className="text-3xl font-bold text-[#1F2937] sm:text-4xl md:text-5xl">
             Precision-Driven Pedagogy
           </h2>
 

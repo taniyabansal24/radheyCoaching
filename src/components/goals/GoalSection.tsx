@@ -10,7 +10,7 @@ export default function GoalSection() {
         {/* Header */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="text-5xl font-bold text-[#1F2937]">
+            <h2 className="text-3xl font-bold text-[#1F2937] sm:text-4xl md:text-5xl">
               Select Your Goal
             </h2>
 

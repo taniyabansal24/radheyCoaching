@@ -14,7 +14,7 @@ export default function TransformSection() {
           <div className="flex items-center justify-between gap-10">
             {/* Left */}
             <div className="max-w-[610px]">
-              <h2 className="text-[48px] font-bold  text-[#2E2E2E]">
+              <h2 className="text-3xl font-bold text-[#2E2E2E] sm:text-4xl md:text-[48px]">
                 Transform your Life
                 <br />
                 with Radhey Coaching

@@ -31,7 +31,7 @@ export default function Hero() {
 
             {/* Heading */}
             <div className="mt-8 max-w-5xl text-center">
-              <h1 className="text-[52px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#131B38] lg:text-[74px]">
+              <h1 className="text-[36px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#131B38] sm:text-[52px] lg:text-[74px]">
                 Where <span className="text-[#A53BA5]">Ambition</span>
                 <br />
                 <span className="relative inline-flex items-center justify-center px-4 py-2 mr-3">
