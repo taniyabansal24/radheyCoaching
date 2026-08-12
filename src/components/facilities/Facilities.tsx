@@ -3,17 +3,17 @@ import FacilityCard from "./FacilityCard";
 
 const facilities = [
   {
-    image: "/images/classroom.png",
+    image: "/images/image1.webp",
     title: "Class Room",
     subtitle: "ABCD Facility",
   },
   {
-    image: "/images/classroom.png",
+    image: "/images/image3.webp",
     title: "Online facilities",
     subtitle: "ABCD Facility",
   },
   {
-    image: "/images/classroom.png",
+    image: "/images/image2.webp",
     title: "Experienced Teacher",
     subtitle: "ABCD work exp",
   },

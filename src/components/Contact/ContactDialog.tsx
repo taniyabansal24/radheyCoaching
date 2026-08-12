@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send } from "lucide-react";
+import { X, Send, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
 
 interface ContactDialogProps {
@@ -9,10 +9,7 @@ interface ContactDialogProps {
   onClose: () => void;
 }
 
-export default function ContactDialog({
-  open,
-  onClose,
-}: ContactDialogProps) {
+export default function ContactDialog({ open, onClose }: ContactDialogProps) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -46,9 +43,9 @@ export default function ContactDialog({
             transition={{ duration: 0.2 }}
             className="fixed left-1/2 top-1/2 z-[9999] w-[92%] max-w-3xl -translate-x-1/2 -translate-y-1/2"
           >
-            <div className="relative overflow-hidden rounded-2xl bg-white shadow-2xl">
+            <div className="relative max-h-[90vh] overflow-y-auto overflow-hidden rounded-2xl bg-white shadow-2xl">
               {/* Glow */}
-              <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#EAF7CF] blur-3xl opacity-50" />
+              <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#EAF7CF] opacity-50 blur-3xl" />
 
               {/* Close Button */}
               <button
@@ -69,11 +66,11 @@ export default function ContactDialog({
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#6FA073] focus:ring-2 focus:ring-[#6FA073]/20"
+                      className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                     />
                   </div>
 
-                  {/* Email */}
+                  {/* Work Email */}
                   <div>
                     <label className="mb-2 block text-[15px] font-medium text-[#303042]">
                       Work Email
@@ -82,22 +79,54 @@ export default function ContactDialog({
                     <input
                       type="email"
                       placeholder="john@company.com"
-                      className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#6FA073] focus:ring-2 focus:ring-[#6FA073]/20"
+                      className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                     />
                   </div>
-                </div>
 
-                {/* Subject */}
-                <div className="mt-5">
-                  <label className="mb-2 block text-[15px] font-medium text-[#303042]">
-                    Subject
-                  </label>
+                  {/* Phone Number */}
+                  <div>
+                    <label className="mb-2 block text-[15px] font-medium text-[#303042]">
+                      Phone Number
+                    </label>
 
-                  <input
-                    type="text"
-                    placeholder="General Inquiry"
-                    className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#6FA073] focus:ring-2 focus:ring-[#6FA073]/20"
-                  />
+                    <input
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
+                    />
+                  </div>
+
+                  {/* Subject */}
+                  <div>
+                    <label className="mb-2 block text-[15px] font-medium text-[#344054]">
+                      Subject
+                    </label>
+
+                    <div className="relative">
+                      <select
+                        defaultValue=""
+                        className="h-12 w-full appearance-none rounded-xl border border-[#D0D5DD] bg-white px-4 pr-10 text-[15px] text-[#344054] outline-none transition-all focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/10"
+                      >
+                        <option value="" disabled>
+                          Select Subject
+                        </option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="biology">Biology</option>
+                        <option value="computer-science">
+                          Computer Science
+                        </option>
+                        <option value="english">English</option>
+                        <option value="other">Other</option>
+                      </select>
+
+                      <ChevronDown
+                        size={18}
+                        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#667085]"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Message */}
@@ -109,12 +138,12 @@ export default function ContactDialog({
                   <textarea
                     rows={5}
                     placeholder="Tell us about your project or inquiry..."
-                    className="w-full resize-none rounded-xl border border-gray-300 p-4 text-[15px] outline-none transition focus:border-[#6FA073] focus:ring-2 focus:ring-[#6FA073]/20"
+                    className="w-full resize-none rounded-xl border border-gray-300 p-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                   />
                 </div>
 
                 {/* Button */}
-                <button className="mt-7 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#9D4091] text-[15px] font-medium text-white shadow-md transition hover:bg-[#5c9162] hover:shadow-lg active:scale-[0.98]">
+                <button className="mt-7 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#9D4091] text-[15px] font-medium text-white shadow-md transition hover:bg-[#87357D] hover:shadow-lg active:scale-[0.98]">
                   Send Message
                   <Send size={18} />
                 </button>
@@ -124,7 +153,7 @@ export default function ContactDialog({
                   By sending this message, you agree to our{" "}
                   <a
                     href="/privacy"
-                    className="font-medium underline underline-offset-2 transition-colors hover:text-[#6FA073]"
+                    className="font-medium underline underline-offset-2 transition-colors hover:text-[#9D4091]"
                   >
                     Privacy Policy
                   </a>

@@ -72,7 +72,7 @@ export default function Hero() {
               </Link>
 
               <button onClick={() => setIsContactOpen(true)} className="group flex h-16 items-center gap-5 rounded-full border border-[#ECECEC] bg-white px-8 text-lg font-semibold text-[#1D2747] shadow-lg transition hover:-translate-y-1 z-30">
-                Book Counsling
+                Book Counselling
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1D2747] text-white transition group-hover:translate-x-1">
                   <ArrowRight size={22} />
                 </span>
