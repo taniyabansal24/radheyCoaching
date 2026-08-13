@@ -8,12 +8,12 @@ const facilities = [
     subtitle: "ABCD Facility",
   },
   {
-    image: "/images/image3.webp",
+    image: "/images/image2.webp",
     title: "Online facilities",
     subtitle: "ABCD Facility",
   },
   {
-    image: "/images/image2.webp",
+    image: "/images/image3.webp",
     title: "Experienced Teacher",
     subtitle: "ABCD work exp",
   },
