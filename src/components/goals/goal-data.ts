@@ -1,27 +1,27 @@
 export const goals = [
   {
-    image: "/images/jee.jpg",
+    image: "/images/Jee.jpg",
     badge: "PRE-ENGINEERING",
     title: "IIT-JEE Main &\nAdvanced",
     description:
       "Master Physics, Chemistry, and Math with our signature 'Problem-to-Logic' method.",
   },
   {
-    image: "/images/neet.jpg",
+    image: "/images/Neet.jpg",
     badge: "MEDICAL",
     title: "NEET-UG\nFoundation",
     description:
       "Biology-intensive curriculum with integrated doubt-solving for aspiring doctors.",
   },
   {
-    image: "/images/jee.jpg",
+    image: "/images/foundation.jpg",
     badge: "MIDDLE SCHOOL",
     title: "Foundation (8th-\n10th)",
     description:
       "Biology-intensive curriculum with integrated doubt-solving for aspiring doctors.",
   },
   {
-    image: "/images/neet.jpg",
+    image: "/images/cbseBoard.jpg",
     badge: "BOARD PREP",
     title: "CBSE Boards\nExcellence",
     description:
