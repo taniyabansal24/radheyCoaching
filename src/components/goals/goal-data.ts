@@ -1,13 +1,13 @@
 export const goals = [
   {
-    image: "/images/Jee.jpg",
+    image: "/images/imageJee.jpg",
     badge: "PRE-ENGINEERING",
     title: "IIT-JEE Main &\nAdvanced",
     description:
       "Master Physics, Chemistry, and Math with our signature 'Problem-to-Logic' method.",
   },
   {
-    image: "/images/Neet.jpg",
+    image: "/images/imageNeet.jpg",
     badge: "MEDICAL",
     title: "NEET-UG\nFoundation",
     description:
