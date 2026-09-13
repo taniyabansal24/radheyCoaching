@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, Check } from "lucide-react";
 
 interface Props {
@@ -6,6 +8,7 @@ interface Props {
   badge: string;
   icon: React.ElementType;
   points: string[];
+  handleDownloadBrochure?: () => void;
 }
 
 export default function PedagogyCard({
@@ -14,6 +17,7 @@ export default function PedagogyCard({
   badge,
   icon: Icon,
   points,
+  handleDownloadBrochure,
 }: Props) {
   return (
     <div className="group rounded-[30px] border border-[#F0EEF3] bg-white p-8 shadow-[0_20px_60px_rgba(40,40,40,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_25px_80px_rgba(157,64,145,0.12)]">
@@ -56,7 +60,10 @@ export default function PedagogyCard({
       </div>
 
       {/* Footer */}
-      <button className="mt-10 flex items-center gap-3 font-semibold text-[#273147] transition-all group-hover:gap-4">
+      <button
+        onClick={handleDownloadBrochure}
+        className="mt-10 flex items-center gap-3 font-semibold text-[#273147] transition-all group-hover:gap-4"
+      >
         Learn More
         <ArrowRight className="h-4 w-4" />
       </button>

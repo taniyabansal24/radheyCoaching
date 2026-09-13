@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
@@ -6,6 +8,7 @@ interface GoalCardProps {
   badge: string;
   title: string;
   description: string;
+  handleDownloadBrochure?: () => void;
 }
 
 export default function GoalCard({
@@ -13,6 +16,7 @@ export default function GoalCard({
   badge,
   title,
   description,
+  handleDownloadBrochure,
 }: GoalCardProps) {
   return (
     <article className="group overflow-hidden rounded-[34px] border border-[#EEF1F5] bg-white shadow-[0_8px_35px_rgba(29,39,71,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(29,39,71,0.10)]">
@@ -40,7 +44,10 @@ export default function GoalCard({
           {description}
         </p>
 
-        <button className="mt-4 flex items-center gap-2 text-[16px] font-semibold text-[#A13F99] transition-all group-hover:gap-3">
+        <button
+          onClick={handleDownloadBrochure}
+          className="mt-4 flex items-center gap-2 text-[16px] font-semibold text-[#A13F99] transition-all group-hover:gap-3"
+        >
           View Curriculum
           <ArrowRight size={18} />
         </button>

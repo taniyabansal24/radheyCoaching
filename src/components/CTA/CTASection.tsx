@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -11,6 +12,15 @@ export default function CTASection() {
     const link = document.createElement("a");
     link.href = "/brochure/Radhey-Coaching-Brochure.pdf";
     link.download = "Radhey-Coaching-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadApp = () => {
+    const link = document.createElement("a");
+    link.href = "/app/Radhey-Coaching.apk";
+    link.download = "Radhey-Coaching.apk";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -43,13 +53,26 @@ export default function CTASection() {
 
               {/* Buttons */}
 
-              <div className="mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:justify-center lg:mt-14 lg:gap-5">
+              <div className="mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:flex-wrap sm:justify-center lg:mt-14 lg:gap-5">
+                {/* Apply Online */}
+
                 <button
                   onClick={() => setIsContactOpen(true)}
                   className="w-full rounded-xl bg-white px-8 py-4 text-base font-semibold text-[#A03E98] shadow-[0_15px_35px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 sm:w-auto sm:min-w-[220px] sm:text-lg lg:px-10 lg:py-5"
                 >
                   Apply Online Now
                 </button>
+
+                {/* Download App */}
+
+                <button
+                  onClick={handleDownloadApp}
+                  className="w-full rounded-xl border-2 border-white bg-transparent px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#A03E98] sm:w-auto sm:min-w-[220px] sm:text-lg lg:px-10 lg:py-5"
+                >
+                  Download Student App
+                </button>
+
+                {/* Download Brochure */}
 
                 <button
                   onClick={handleDownloadBrochure}
@@ -62,6 +85,7 @@ export default function CTASection() {
           </div>
         </Container>
       </section>
+
       <ContactDialog
         open={isContactOpen}
         onClose={() => setIsContactOpen(false)}

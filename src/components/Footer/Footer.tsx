@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Globe,
-  MapPin,
-  Phone,
-  Mail,
-  MessageSquareText,
-} from "lucide-react";
+import { Globe, MapPin, Phone, Mail, MessageSquareText } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,20 +13,17 @@ export default function Footer() {
           {/* Brand */}
 
           <div className="text-center sm:text-left">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-3"
-            >
-               <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
-                              <Image
-                                src="/images/logo.png"
-                                alt="Radhey Coaching Logo"
-                                width={48}
-                                height={48}
-                                className="h-full w-full object-contain"
-                                priority
-                              />
-                            </div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Radhey Coaching Logo"
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-contain"
+                  priority
+                />
+              </div>
 
               <span className="text-lg font-semibold text-[#A53BA5] sm:text-xl">
                 Radhey Coaching
@@ -65,17 +56,17 @@ export default function Footer() {
 
             <ul className="mt-6 space-y-3">
               {[
-                "Admissions",
-                "Scholarship Test",
-                "Course Finder",
-                "Student Login",
+                { label: "Courses", href: "#courses" },
+                { label: "Results", href: "#results" },
+                { label: "Faculty", href: "#faculty" },
+                { label: "About", href: "#about" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm text-[#5B6478] transition hover:text-[#A13F99] sm:text-base"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -91,17 +82,17 @@ export default function Footer() {
 
             <ul className="mt-6 space-y-3">
               {[
-                "Privacy Policy",
-                "Terms of Service",
-                "FAQ",
-                "Center Locator",
+                { label: "Privacy Policy", href: "/" },
+                { label: "Terms of Service", href: "/" },
+                { label: "FAQs", href: "#faq" },
+                { label: "Center Locator", href: "/" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm text-[#5B6478] transition hover:text-[#A13F99] sm:text-base"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -117,10 +108,7 @@ export default function Footer() {
 
             <div className="mt-6 space-y-5">
               <div className="flex items-start justify-center gap-3 sm:justify-start">
-                <MapPin
-                  size={20}
-                  className="mt-1 shrink-0 text-[#A13F99]"
-                />
+                <MapPin size={20} className="mt-1 shrink-0 text-[#A13F99]" />
 
                 <p className="text-sm leading-7 text-[#5B6478] sm:text-base">
                   124, Education Hub,
@@ -132,10 +120,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center justify-center gap-3 sm:justify-start">
-                <Phone
-                  size={20}
-                  className="shrink-0 text-[#A13F99]"
-                />
+                <Phone size={20} className="shrink-0 text-[#A13F99]" />
 
                 <a
                   href="tel:+91180072433901"
@@ -146,10 +131,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center justify-center gap-3 sm:justify-start">
-                <Mail
-                  size={20}
-                  className="shrink-0 text-[#A13F99]"
-                />
+                <Mail size={20} className="shrink-0 text-[#A13F99]" />
 
                 <a
                   href="mailto:admissions@radheycoaching.com"

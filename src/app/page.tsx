@@ -3,6 +3,7 @@ import FeePolicySection from "@/components/course-fee/FeePolicySection";
 import CTASection from "@/components/CTA/CTASection";
 import Facilities from "@/components/facilities/Facilities";
 import FacultyCarousel from "@/components/faculty/FacultyCarousel";
+import FAQSection from "@/components/FAQSection/FAQSection";
 import Footer from "@/components/Footer/Footer";
 import GoalSection from "@/components/goals/GoalSection";
 import Hero from "@/components/hero/Hero";
@@ -26,6 +27,7 @@ export default function Home() {
       <FeePolicySection/>
       <FacultyCarousel/>
       <TestimonialSection/>
+      <FAQSection/>
       <CTASection/>
       <Footer/>
     </main>

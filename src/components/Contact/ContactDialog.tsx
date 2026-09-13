@@ -65,7 +65,7 @@ export default function ContactDialog({ open, onClose }: ContactDialogProps) {
 
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Rahul Sharma"
                       className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                     />
                   </div>
@@ -73,12 +73,12 @@ export default function ContactDialog({ open, onClose }: ContactDialogProps) {
                   {/* Work Email */}
                   <div>
                     <label className="mb-2 block text-[15px] font-medium text-[#303042]">
-                      Work Email
+                      Email
                     </label>
 
                     <input
                       type="email"
-                      placeholder="john@company.com"
+                      placeholder="rahulsharma@gmail.com"
                       className="h-12 w-full rounded-xl border border-gray-300 px-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                     />
                   </div>
@@ -137,7 +137,7 @@ export default function ContactDialog({ open, onClose }: ContactDialogProps) {
 
                   <textarea
                     rows={5}
-                    placeholder="Tell us about your project or inquiry..."
+                    placeholder="Tell us about your question or inquiry..."
                     className="w-full resize-none rounded-xl border border-gray-300 p-4 text-[15px] outline-none transition focus:border-[#9D4091] focus:ring-2 focus:ring-[#9D4091]/20"
                   />
                 </div>

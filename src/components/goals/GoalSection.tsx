@@ -1,9 +1,20 @@
+"use client";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import GoalCard from "./GoalCard";
 import { goals } from "./goal-data";
 import Container from "../ui/Container";
 
 export default function GoalSection() {
+  const handleDownloadBrochure = () => {
+    const link = document.createElement("a");
+    link.href = "/brochure/Radhey-Coaching-Brochure.pdf";
+    link.download = "Radhey-Coaching-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="bg-[#FCFBFD] py-24">
       <Container>
@@ -33,7 +44,11 @@ export default function GoalSection() {
         {/* Cards */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {goals.map((goal) => (
-            <GoalCard key={goal.title} {...goal} />
+            <GoalCard
+              key={goal.title}
+              {...goal}
+              handleDownloadBrochure={handleDownloadBrochure}
+            />
           ))}
         </div>
       </Container>

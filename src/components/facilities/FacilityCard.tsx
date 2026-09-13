@@ -25,7 +25,7 @@ export default function FacilityCard({
       <div className="absolute bottom-8 left-5">
         <h3 className="text-[22px] font-bold text-white">{title}</h3>
 
-        <p className="mt-1 text-[14px] font-semibold text-[#FFFFFF]">{subtitle}</p>
+        {/* <p className="mt-1 text-[14px] font-semibold text-[#FFFFFF]">{subtitle}</p> */}
       </div>
     </div>
   );

@@ -1,8 +1,18 @@
+"use client";
+
 import Container from "../ui/Container";
 import PedagogyCard from "./PedagogyCard";
 import { pedagogyCards } from "./pedagogy-data";
 
 export default function PedagogySection() {
+    const handleDownloadBrochure = () => {
+    const link = document.createElement("a");
+    link.href = "/brochure/Radhey-Coaching-Brochure.pdf";
+    link.download = "Radhey-Coaching-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section className="bg-[#FCFBFD] py-28">
       <Container>
@@ -21,7 +31,11 @@ export default function PedagogySection() {
         {/* Cards */}
         <div className="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {pedagogyCards.map((card) => (
-            <PedagogyCard key={card.title} {...card} />
+            <PedagogyCard
+              key={card.title}
+              {...card}
+              handleDownloadBrochure={handleDownloadBrochure}
+            />
           ))}
         </div>
       </Container>

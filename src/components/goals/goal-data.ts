@@ -4,27 +4,27 @@ export const goals = [
     badge: "PRE-ENGINEERING",
     title: "IIT-JEE Main &\nAdvanced",
     description:
-      "Master Physics, Chemistry, and Math with our signature 'Problem-to-Logic' method.",
+      "Master Physics, Chemistry, and Mathematics with advanced concepts, problem-solving strategies, and preparation for JEE Main and Advanced.",
   },
   {
     image: "/images/imageNeet.jpg",
     badge: "MEDICAL",
     title: "NEET-UG\nFoundation",
     description:
-      "Biology-intensive curriculum with integrated doubt-solving for aspiring doctors.",
+      "Build a strong foundation in Biology, Physics, and Chemistry with concept-based learning, regular practice, and expert guidance for NEET-UG.",
   },
   {
     image: "/images/foundation.jpg",
     badge: "MIDDLE SCHOOL",
     title: "Foundation (8th-\n10th)",
     description:
-      "Biology-intensive curriculum with integrated doubt-solving for aspiring doctors.",
+      "Strengthen core concepts in Mathematics, Science, and logical reasoning through engaging lessons and early preparation for future academic success.",
   },
   {
     image: "/images/cbseBoard.jpg",
     badge: "BOARD PREP",
     title: "CBSE Boards\nExcellence",
     description:
-      "Strategic scoring modules designed to maximize your 12th Board percentages.",
+      "Master the CBSE syllabus with concept clarity, strategic revision, and exam-focused practice designed to maximize your board examination scores.",
   },
 ];
